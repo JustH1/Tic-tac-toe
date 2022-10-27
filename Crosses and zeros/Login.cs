@@ -24,27 +24,20 @@ namespace Crosses_and_zeros
             pictureBox1.Image = Resources.X_for_login;
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.Image = Resources._0_for_login;
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            //buttonSett
-            {
-                buttonSett.Text = "";
-                buttonSett.BackgroundImage = Resources.sett;
-                buttonSett.Location = new Point(this.Width - buttonSett.Size.Width - 3, 3);
-                buttonSett.FlatStyle = FlatStyle.Popup;
-                buttonSett.FlatAppearance.BorderSize = 0;
-                buttonSett.BackgroundImageLayout = ImageLayout.Zoom;
-                buttonSett.Click += ButtonSett_Click;
-            }
-        }
-        private void ButtonSett_Click(object sender, EventArgs e)
-        {
-            
-        }
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;           
+        }        
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Tic_tac_toe game = new Tic_tac_toe(textBox1.Text, textBox2.Text);
-            game.Show();
+            if (textBox1.Text != "" & textBox2.Text != "")
+            {
+                this.Hide();
+                Tic_tac_toe game = new Tic_tac_toe(textBox1.Text, textBox2.Text);
+                game.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка! Введите имена игроков.");                
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

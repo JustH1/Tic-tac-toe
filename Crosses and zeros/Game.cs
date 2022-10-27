@@ -25,7 +25,7 @@ namespace Crosses_and_zeros
             this.Text = "Crosses and zeros =)";
             this.Icon = Resources.Icon;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterParent;          
+            this.StartPosition = FormStartPosition.CenterScreen;
             buttonClose.Text = "Close";
             buttonRes.Text = "Restart";
             label3.Text = $"The first move does: {pl1}";
@@ -52,22 +52,22 @@ namespace Crosses_and_zeros
                     if (whoPlay == pl1)
                     {
                         buttonCl.Text = "X";
-                        whoPlay = pl2;
-                        label3.Text = $"Next move: {pl2}";
                         CheckWin();
+                        whoPlay = pl2;                       
+                        label3.Text = $"Next move: {pl2}";
                     }
                     else if (whoPlay == pl2)
                     {
                         buttonCl.Text = "0";
-                        whoPlay = pl1;
-                        label3.Text = $"Next move: {pl1}";
                         CheckWin();
+                        whoPlay = pl1;
+                        label3.Text = $"Next move: {pl1}";                       
                     }
                 }               
             }            
         }
         private void CheckWin()
-        {
+        {           
             if (button0.Text == button1.Text && button1.Text == button2.Text)                 
             {
                 if(button1.Text != "")
@@ -183,6 +183,6 @@ namespace Crosses_and_zeros
             {
                 StartPoint = new Point(e.X, e.Y);
             }
-        }
+        }       
     }
 }
