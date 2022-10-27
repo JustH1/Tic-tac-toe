@@ -205,7 +205,10 @@
             this.Controls.Add(this.buttonRes);
             this.Controls.Add(this.buttonClose);
             this.Name = "Tic_tac_toe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tic_tac_toe_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Tic_tac_toe_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

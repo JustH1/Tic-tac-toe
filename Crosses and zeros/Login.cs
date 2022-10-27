@@ -10,9 +10,10 @@ using System.Windows.Forms;
 using Crosses_and_zeros.Properties;
 
 namespace Crosses_and_zeros
-{
+{    
     public partial class Login : Form
     {
+        Point moveStart;
         public Login()
         {
             InitializeComponent();
@@ -37,6 +38,23 @@ namespace Crosses_and_zeros
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                moveStart = new Point(e.X, e.Y);
+            }
+        }
+
+        private void Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) != 0)
+            {
+                Point point = new Point(e.X - moveStart.X, e.Y - moveStart.Y);
+                this.Location = new Point(this.Location.X + point.X, this.Location.Y + point.Y);
+            }
         }
     }
 }

@@ -15,21 +15,20 @@ namespace Crosses_and_zeros
         string whoPlay = "";
         string pl1;
         string pl2;
+        Point StartPoint;
         public Tic_tac_toe(string pl1, string pl2)
         {
-            //whoPlay = who;
             this.pl1 = whoPlay = pl1;
             this.pl2 = pl2;
             InitializeComponent();
             this.Text = "Crosses and zeros =)";
-            this.Icon = Resources.Icon;
-            this.StartPosition = FormStartPosition.CenterParent;
+            this.Icon = Resources.Icon;           
             this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterParent;
             label3.Text = $"The first move makes: {pl1}";
             buttonClose.Text = "Close";
             buttonRes.Text = "Restart";
-        }
-               
+        }               
         private void Bt_Click(object sender, EventArgs e)
         {
             Button buttonCl = sender as Button;
@@ -53,8 +52,7 @@ namespace Crosses_and_zeros
                     label3.Text = $"Next move: {pl2}";
                     CheckWin();
                 }   
-            }
-            
+            }            
         }
         private void CheckWin()
         {
@@ -144,13 +142,28 @@ namespace Crosses_and_zeros
         {
             Application.Exit();
         }
-
         private void buttonRes_Click(object sender, EventArgs e)
         {
             this.Hide();
             Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
             game.Show();
         }
-       
+
+        private void Tic_tac_toe_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) != 0)
+            {
+                Point point = new Point(e.X - StartPoint.X, e.Y - StartPoint.Y);
+                this.Location = new Point(this.Location.X + point.X, this.Location.Y + point.Y);
+            }          
+        }
+
+        private void Tic_tac_toe_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                StartPoint = new Point(e.X, e.Y);
+            }
+        }
     }
 }
