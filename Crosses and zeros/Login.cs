@@ -36,7 +36,7 @@ namespace Crosses_and_zeros
             }
             else
             {
-                MessageBox.Show("Ошибка! Введите имена игроков.");                
+                MessageBox.Show("Error! Enter the names of the players.");                
             }
         }
 
