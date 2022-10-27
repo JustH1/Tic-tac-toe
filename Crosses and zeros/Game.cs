@@ -15,6 +15,7 @@ namespace Crosses_and_zeros
         string whoPlay = "";
         string pl1;
         string pl2;
+        bool firsttry = true;
         Point StartPoint;
         public Tic_tac_toe(string pl1, string pl2)
         {
@@ -22,37 +23,47 @@ namespace Crosses_and_zeros
             this.pl2 = pl2;
             InitializeComponent();
             this.Text = "Crosses and zeros =)";
-            this.Icon = Resources.Icon;           
+            this.Icon = Resources.Icon;
             this.FormBorderStyle = FormBorderStyle.None;
-            this.StartPosition = FormStartPosition.CenterParent;
-            label3.Text = $"The first move makes: {pl1}";
-            //whoPlay = pl2;
+            this.StartPosition = FormStartPosition.CenterParent;          
             buttonClose.Text = "Close";
             buttonRes.Text = "Restart";
+            label3.Text = $"The first move does: {pl1}";
         }               
         private void Bt_Click(object sender, EventArgs e)
         {
             Button buttonCl = sender as Button;
+
             if (buttonCl.Text != "")
             {
                 MessageBox.Show("Position occupied");
             }
             else
-            {                
-                if (whoPlay == pl1)
+            {
+                if (firsttry == true)
                 {
                     buttonCl.Text = "X";
+                    firsttry = false;
                     whoPlay = pl2;
-                    label3.Text = $"Next move: {pl1}";
-                    CheckWin();
+                    label3.Text = $"Next move: {pl2}";
                 }
                 else
                 {
-                    buttonCl.Text = "0";
-                    whoPlay = pl1;
-                    label3.Text = $"Next move: {pl2}";
-                    CheckWin();
-                }   
+                    if (whoPlay == pl1)
+                    {
+                        buttonCl.Text = "X";
+                        whoPlay = pl2;
+                        label3.Text = $"Next move: {pl2}";
+                        CheckWin();
+                    }
+                    else if (whoPlay == pl2)
+                    {
+                        buttonCl.Text = "0";
+                        whoPlay = pl1;
+                        label3.Text = $"Next move: {pl1}";
+                        CheckWin();
+                    }
+                }               
             }            
         }
         private void CheckWin()

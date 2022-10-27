@@ -83,6 +83,16 @@ namespace Crosses_and_zeros.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sett {
+            get {
+                object obj = ResourceManager.GetObject("sett", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap X_for_login {
             get {
                 object obj = ResourceManager.GetObject("X_for_login", resourceCulture);

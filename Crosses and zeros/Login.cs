@@ -25,9 +25,21 @@ namespace Crosses_and_zeros
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.Image = Resources._0_for_login;
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-
+            //buttonSett
+            {
+                buttonSett.Text = "";
+                buttonSett.BackgroundImage = Resources.sett;
+                buttonSett.Location = new Point(this.Width - buttonSett.Size.Width - 3, 3);
+                buttonSett.FlatStyle = FlatStyle.Popup;
+                buttonSett.FlatAppearance.BorderSize = 0;
+                buttonSett.BackgroundImageLayout = ImageLayout.Zoom;
+                buttonSett.Click += ButtonSett_Click;
+            }
         }
-
+        private void ButtonSett_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
