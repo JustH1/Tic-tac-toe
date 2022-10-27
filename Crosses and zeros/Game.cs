@@ -26,6 +26,7 @@ namespace Crosses_and_zeros
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.CenterParent;
             label3.Text = $"The first move makes: {pl1}";
+            //whoPlay = pl2;
             buttonClose.Text = "Close";
             buttonRes.Text = "Restart";
         }               
@@ -137,6 +138,14 @@ namespace Crosses_and_zeros
                     game.Show();
                 }
             }
+            else if(button0.Text != "" & button1.Text != "" & button2.Text != "" & button3.Text != "" &
+                button4.Text != "" & button5.Text != "" & button6.Text != "" & button7.Text != "" & button8.Text != "")
+            {
+                MessageBox.Show("Draw!");
+                this.Close();
+                Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
+                game.Show();
+            }
         }              
         private void buttonEx_Click(object sender, EventArgs e)
         {
@@ -145,8 +154,8 @@ namespace Crosses_and_zeros
         private void buttonRes_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
-            game.Show();
+            Login login = new Login();
+            login.Show();
         }
 
         private void Tic_tac_toe_MouseMove(object sender, MouseEventArgs e)
