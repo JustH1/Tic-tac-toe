@@ -71,7 +71,7 @@ namespace Crosses_and_zeros
             {
                 if (button4.Text != "")
                 {
-                    MessageBox.Show($"The player won:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -81,7 +81,7 @@ namespace Crosses_and_zeros
             {
                 if (button7.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -91,7 +91,7 @@ namespace Crosses_and_zeros
             {
                 if (button3.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -101,7 +101,7 @@ namespace Crosses_and_zeros
             {
                 if(button4.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -111,7 +111,7 @@ namespace Crosses_and_zeros
             {
                 if (button5.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -121,7 +121,7 @@ namespace Crosses_and_zeros
             {
                 if (button4.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -131,7 +131,7 @@ namespace Crosses_and_zeros
             {
                 if (button4.Text != "")
                 {
-                    MessageBox.Show($"Победил игрок:{whoPlay}");
+                    MessageBox.Show($"The player won: {whoPlay}");
                     this.Close();
                     Tic_tac_toe game = new Tic_tac_toe(pl1, pl2);
                     game.Show();
@@ -157,7 +157,6 @@ namespace Crosses_and_zeros
                 this.Location = new Point(this.Location.X + point.X, this.Location.Y + point.Y);
             }          
         }
-
         private void Tic_tac_toe_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
